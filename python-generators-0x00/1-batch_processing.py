@@ -54,7 +54,7 @@ def stream_users_in_batches(batch_size):
 
         # Cursor configured to fetch results as dictionaries
         cursor = conn.cursor(dictionary=True) 
-        select_sql = f"SELECT user_id, name, email, age FROM {TABLE_NAME}"
+        select_sql = "SELECT user_id, name, email, age FROM user_data"
         cursor.execute(select_sql)
 
         # LOOP 1 (Required Loop): Fetch and yield batches until fetchmany returns an empty list
