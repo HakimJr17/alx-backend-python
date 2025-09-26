@@ -56,7 +56,7 @@ def paginate_users(page_size, offset):
         
         # Hardcoding 'user_data' as required by the checker.
         # This query structure is the key to fetching paginated data efficiently.
-        select_sql = f"SELECT user_id, name, email, age FROM user_data LIMIT {page_size} OFFSET {offset}"
+        select_sql = f"SELECT * FROM user_data LIMIT {page_size} OFFSET {offset}"
         
         cursor.execute(select_sql)
         page_data = cursor.fetchall() # Fetches the entire page (list)
